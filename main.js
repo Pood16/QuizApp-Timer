@@ -260,7 +260,6 @@ buttonState = false;
 counter = 10;
 timeSet = setInterval(() => {
     count.textContent = `temps restant : ${counter} sec.`;
-    console.log(counter);
     counter--;
     if (counter < 0) {
         clearInterval(timeSet);

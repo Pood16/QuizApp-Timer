@@ -116,3 +116,31 @@ body {
   background-color: red;
   color: black;
 }
+@media(max-width:425px){
+  .start_quiz{
+    width: 95%;
+    min-width: 400px;
+    margin: 0 auto;
+  }
+  .container{
+    width: 9%;
+    min-width: 400px;
+    padding: 25px;
+    position: relative;
+  }
+  .container h1{
+    font-size: 1.2em;
+  }
+  #header-timer{
+    position: absolute;
+    top: 60px;
+  }
+  #question{
+    font-size: 18px;
+  }
+  .correctStyle{
+    font-weight: 400s;
+  font-size: 16px;
+  }
+ 
+}

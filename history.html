@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="history.css">
+    <title>Score History</title>
+</head>
+<body>
+    <h1 style="text-align: center;">Historique</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Score</th>
+                <th>Niveau</th>
+            </tr>
+        </thead>
+        <tbody id="history-table-body">
+            
+        </tbody>
+    </table>
+    <script>
+        
+
+// get from local storage
+let scoreHistory = JSON.parse(localStorage.getItem("score history")) || [];
+let gradeHistory = JSON.parse(localStorage.getItem("grade history")) || [];
+
+const tableBody = document.getElementById('history-table-body');
+
+
+for (let i = 0; i < scoreHistory.length; i++) {
+    const row = document.createElement('tr');
+    const scoreData = document.createElement('td');
+    scoreData.textContent = scoreHistory[i];
+    row.appendChild(scoreData);
+    const gradeCell = document.createElement('td');
+    gradeCell.textContent = gradeHistory[i]; 
+    row.appendChild(gradeCell);
+    tableBody.appendChild(row);
+}
+    </script>
+</body>
+</html>

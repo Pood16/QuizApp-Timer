@@ -212,7 +212,7 @@ let questions = [
 ];
 
 questions = shuffleArray(questions);
-console.log(questions); 
+
 
 // get from html
 let hideCounter = document.getElementById('header-timer');
@@ -224,6 +224,8 @@ let startGame = document.getElementById('start_game');
 const questionElement = document.getElementById('question');
 const answerBtn  = document.getElementById('answer-buttons')
 const nextBtn = document.getElementById('next');
+let scoreHistory = [];
+let gradeHistory = [];
 let currentQuestionIndex = 0;
 let buttonState;
 let score = 0;
@@ -347,6 +349,7 @@ function nextQuestion(){
   }
 }
 function showScore(){
+ 
   removeQuestion();
   hideCounter.classList.add("addRemove");
   nextBtn.innerHTML = "Reffaire le test";
@@ -357,6 +360,7 @@ function showScore(){
 }
 let grade;
 function scoreGrad(){
+  
   if (score <= 2){
     grade = "A1"
   }else if(score > 2 && score <= 6){
@@ -372,8 +376,13 @@ function scoreGrad(){
   questionElement.innerHTML = `votre moyenne ${score}/${questions.length} et votre niveau est :  ${grade}`;
   localStorage.setItem("lastScore", score);
   localStorage.setItem("lastGrade", grade);
+  scoreHistory.push(score);
+  gradeHistory.push(grade);
+  localStorage.setItem("score history", JSON.stringify(scoreHistory));
+  localStorage.setItem("grade history", JSON.stringify(gradeHistory));
 }
-// history 
+// history
+ 
 let firstPageScore = document.getElementById('last-score');
 let firstPageGrade  = document.getElementById('last-grade');
 let scoreInLocal = localStorage.getItem("lastScore");
@@ -388,7 +397,6 @@ if (gradeInLocal === null){
 }else{
   firstPageGrade.innerHTML = `dernier niveau: ${localStorage.getItem("lastGrade")}.`;
 }
-
 startQuiz();
 
 

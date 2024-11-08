@@ -1,7 +1,15 @@
+
+body {
+    background-color: #96B6C5;
+  }
+
 header{
     display: flex;
     align-items: center;
     justify-content: space-around;
+}
+header h1 span{
+    color: blue;
 }
 
 table {

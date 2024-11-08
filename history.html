@@ -4,10 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="history.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Score History</title>
 </head>
 <body>
-    <h1 style="text-align: center;">Historique</h1>
+    <header>
+        <h1>Historique</h1>
+        <span>
+            <a href="index.html">
+                <i class="fa-solid fa-house"></i>
+            </a>
+        </span>
+    </header>
     <table>
         <thead>
             <tr>
@@ -25,10 +33,7 @@
 // get from local storage
 let scoreHistory = JSON.parse(localStorage.getItem("score history")) || [];
 let gradeHistory = JSON.parse(localStorage.getItem("grade history")) || [];
-
 const tableBody = document.getElementById('history-table-body');
-
-
 for (let i = 0; i < scoreHistory.length; i++) {
     const row = document.createElement('tr');
     const scoreData = document.createElement('td');

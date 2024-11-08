@@ -383,20 +383,20 @@ function scoreGrad(){
 }
 // history
  
-let firstPageScore = document.getElementById('last-score');
-let firstPageGrade  = document.getElementById('last-grade');
-let scoreInLocal = localStorage.getItem("lastScore");
-let gradeInLocal = localStorage.getItem("lastGrade");
-if (scoreInLocal === null){
-  firstPageScore.innerHTML = `last score : 0 `;
-}else{
-  firstPageScore.innerHTML = `dernier moyenne: ${localStorage.getItem("lastScore")}/${questions.length}.`;
-}
-if (gradeInLocal === null){
-  firstPageGrade.innerHTML = `Pas Encore evalue`
-}else{
-  firstPageGrade.innerHTML = `dernier niveau: ${localStorage.getItem("lastGrade")}.`;
-}
+// let firstPageScore = document.getElementById('last-score');
+// let firstPageGrade  = document.getElementById('last-grade');
+// let scoreInLocal = localStorage.getItem("lastScore");
+// let gradeInLocal = localStorage.getItem("lastGrade");
+// if (scoreInLocal === null){
+//   firstPageScore.innerHTML = `last score : 0 `;
+// }else{
+//   firstPageScore.innerHTML = `dernier moyenne: ${localStorage.getItem("lastScore")}/${questions.length}.`;
+// }
+// if (gradeInLocal === null){
+//   firstPageGrade.innerHTML = `Pas Encore evalue`
+// }else{
+//   firstPageGrade.innerHTML = `dernier niveau: ${localStorage.getItem("lastGrade")}.`;
+// }
 startQuiz();
 
 
